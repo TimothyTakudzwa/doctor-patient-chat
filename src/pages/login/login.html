@@ -1,0 +1,46 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+
+
+        <ion-title center text-center>Login Page</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="appBackground">
+
+    <ion-card style="background-color: #1f1f21">
+
+        <ion-card-header>
+            <h2 style="color: White"> System Login
+            </h2>  </ion-card-header>
+
+        <ion-card-content style="background-color: #1f1f21">
+
+            <ion-list>
+
+                <form [formGroup]="todo">
+                    <ion-item>
+
+                        <ion-label stacked>Username</ion-label>
+
+                        <ion-input type="text" [(ngModel)]="userData.username" formControlName="username"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label stacked>Password</ion-label>
+
+                        <ion-input type="password"  [(ngModel)]="userData.password" formControlName="password"></ion-input>
+                    </ion-item>
+                    <button ion-button full color="success" [disabled]="!todo.valid" (click)="login()">Login Now</button>
+                    <ion-item>
+                        No Account <button ion-button full color="success" (click)="signup()">Signup</button>
+
+                    </ion-item>
+                </form>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
